@@ -1,0 +1,18 @@
+---
+- name: Add configured user accounts to passwordless sudoers.
+  template:
+    src: sudoers_nopasswd.j2
+    dest: "/etc/sudoers.d/{{ item }}"
+    validate: "visudo -cf %s"
+    mode: 0644
+  with_items: "{{ security_sudoers_nopasswd }}"
+  when: security_sudoers_nopasswd | length > 0
+
+- name: Add configured user accounts to sudoers with password.
+  template:
+    src: sudoers_passworded.j2
+    dest: "/etc/sudoers.d/{{ item }}"
+    validate: "visudo -cf %s"
+    mode: 0644
+  with_items: "{{ security_sudoers_with_password }}"
+  when: security_sudoers_with_password | length > 0

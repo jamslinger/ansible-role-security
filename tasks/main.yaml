@@ -1,0 +1,6 @@
+---
+# SSH
+- include_tasks: ssh.yaml
+
+# Sudoers
+- include_tasks: sudoers.yaml

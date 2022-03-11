@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: security
+  namespace: jamslinger
+  author: jamslinger
+  description: Sudoers and SSH security configuration. Handle with care as it's easy to lock yourself out.
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - ssh
+    - security
+    - user
+dependencies: []
